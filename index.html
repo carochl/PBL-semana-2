@@ -104,16 +104,21 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="ABP-Semana 2" startnode="1" creator="Twine" creator-version="2.10.0" format="SugarCube" format-version="2.37.3" ifid="9A8C7197-71C1-4DAB-A3A5-0C4235041A69" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="START" tags="" position="575,175" size="100,100">
-:: Start
+	<tw-storydata name="ABP-Semana 2" startnode="1" creator="Twine" creator-version="2.10.0" format="SugarCube" format-version="2.37.3" ifid="9A8C7197-71C1-4DAB-A3A5-0C4235041A69" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="START" tags="" position="325,50" size="100,100">:: Start
 &lt;&lt;set $puntos = 0&gt;&gt;
-¡Eres el médico de urgencias en una noche agitada! Cuatro niños han llegado con dolor abdominal. Debes evaluarlos, diagnosticar y tomar decisiones para asegurar la mejor atención.
+&lt;&lt;set $nombre to &quot;&quot;&gt;&gt;
 
-Elige a qué paciente atender primero:
-- [[Niño de 6 años con fiebre y dolor en cuadrante inferior derecho (Posible Apendicitis)|Caso1]]
-- [[Adolescente de 15 años con dolor abdominal recurrente|Caso2]]
-- [[Bebé de 3 meses con vómitos biliosos|Caso3]]
-- [[Niño de 7 años con antecedentes de alergias alimentarias y diarrea intermitente|Caso4]]</tw-passagedata><tw-passagedata pid="2" name="Caso1" tags="" position="387.5,300" size="100,100">:: Caso1
+ **Bienvenido al PBL de Dolor Abdominal Interactivo**  
+Por favor, ingresa tu nombre para comenzar:
+
+&lt;&lt;textbox &quot;$nombre&quot; &quot;&quot;&gt;&gt;  
+
+&lt;&lt;button &quot;Continuar&quot;&gt;&gt;
+    &lt;&lt;set $nombre to $nombre&gt;&gt;  
+    &lt;&lt;goto &quot;Introduccion&quot;&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="2" name="Caso1" tags="" position="325,225" size="100,100">:: Caso1
 Un niño de 6 años llega a urgencias con:
 - Dolor en el cuadrante inferior derecho.
 - Fiebre de 38.5°C.
@@ -123,21 +128,24 @@ Un niño de 6 años llega a urgencias con:
 ¿Cómo procederás?
 - [[Realizar historia clínica detallada y examen físico.|HistoriaClinica]]
 - [[Solicitar directamente una ecografía.|PruebasImagen]]
-- [[Administrar analgésicos sin evaluación.|ErrorAnalgesicos]]</tw-passagedata><tw-passagedata pid="3" name="Caso2" tags="" position="725,275" size="100,100">:: Caso2
+- [[Administrar analgésicos sin evaluación.|ErrorAnalgesicos]]</tw-passagedata><tw-passagedata pid="3" name="Caso2" tags="" position="825,350" size="100,100">:: Caso2
 Una adolescente de 15 años acude a la consulta con:
 - Dolor abdominal crónico al menos 4 veces al mes en los últimos 2 meses.
 - Cambios en la frecuencia y forma de las deposiciones.
 - No presenta pérdida de peso, sangrado GI o antecedentes familiares de enfermedad inflamatoria intestinal.
 
-:: SospechaCaso2
  **¿Cuál sería tu sospecha diagnóstica?**
 
 - [[Síndrome de Intestino Irritable (SII)|DiagnosticoSII]]
-- [[Enfermedad inflamatoria intestinal|ErrorEII]]
+- [[Enfermedad Inflamatoria Intestinal (EII)|ErrorEII]]
 - [[Dispepsia funcional|ErrorDispepsia]]
+- [[Enfermedad celíaca|ErrorCeliacaCaso2]]  
+- [[Alergia alimentaria no mediada por IgE|ErrorAlergia]]
 
 
-</tw-passagedata><tw-passagedata pid="4" name="Caso3" tags="" position="1025,300" size="100,100">:: Caso3
+
+
+</tw-passagedata><tw-passagedata pid="4" name="Caso3" tags="" position="950,225" size="100,100">:: Caso3
 Un bebé de 3 meses es llevado a urgencias con:
 - Vómitos biliosos.
 - Irritabilidad y distensión abdominal.
@@ -147,16 +155,15 @@ Un bebé de 3 meses es llevado a urgencias con:
 
 - [[Invaginación intestinal|DiagnosticoInvaginacion]]
 - [[Malrotación intestinal con vólvulo|ErrorVolvulo]]
-- [[Sepsis neonatal|ErrorSepsis]]</tw-passagedata><tw-passagedata pid="5" name="Caso4" tags="" position="1450,275" size="100,100">:: Caso4
-Un niño de 7 años con antecedentes de alergias alimentarias presenta:
-- Dolor abdominal crónico, hinchazón y diarrea intermitente por más de 3 meses.
+- [[Sepsis neonatal|ErrorSepsis]]</tw-passagedata><tw-passagedata pid="5" name="Caso4" tags="" position="1375,200" size="100,100">:: Caso4
+Un niño de 7 años con dolor abdominal crónico, hinchazón y diarrea intermitente por más de 3 meses. Madre refiere episodios previos similares y en ocasiones ha presentado rash cutáneo asociado a algunos alimentos.
 
  **¿Cuál sería tu sospecha diagnóstica?**
 
 - [[Alergias alimentarias no mediadas por IgE|DiagnosticoAlergia]]
 - [[Síndrome de Intestino Irritable (SII)|ErrorSII]]
 - [[Enfermedad celíaca|ErrorCeliaca]]
-</tw-passagedata><tw-passagedata pid="6" name="HistoriaClinica" tags="" position="262.5,425" size="100,100">:: HistoriaClinica
+</tw-passagedata><tw-passagedata pid="6" name="HistoriaClinica" tags="" position="200,350" size="100,100">:: HistoriaClinica
 Examen físico revela:
 - Signo de McBurney positivo.
 - Dolor con rebote (Blumberg positivo).
@@ -167,7 +174,7 @@ Examen físico revela:
 - [[Apendicitis Aguda.|PruebasDiagnosticas]]
 - [[Adenitis Mesentérica.|ErrorAdenitis]]
 - [[Gastroenteritis.|ErrorGastroenteritis]]
-- [[Invaginación Intestinal.|ErrorInvaginacion]]</tw-passagedata><tw-passagedata pid="7" name="PruebasImagen" tags="" position="387.5,425" size="100,100">:: PruebasImagen
+- [[Invaginación Intestinal.|ErrorInvaginacion]]</tw-passagedata><tw-passagedata pid="7" name="PruebasImagen" tags="" position="325,350" size="100,100">:: PruebasImagen
 
 - **IMPORTANTE:** La evaluación clínica es la herramienta principal para diagnosticar apendicitis. Las pruebas de imagen son auxiliares y se utilizan solo para confirmar el diagnóstico en casos dudosos.
 
@@ -180,11 +187,11 @@ Examen físico revela:
   - Mayor precisión diagnóstica.
   - Exposición a radiación, considerar en casos seleccionados.
 
-&lt;&lt;set $puntos -5&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="ErrorAnalgesicos" tags="" position="512.5,425" size="100,100">:: ErrorAnalgesicos
+&lt;&lt;set $puntos -5&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="ErrorAnalgesicos" tags="" position="450,350" size="100,100">:: ErrorAnalgesicos
 Administrar analgésicos sin evaluación puede enmascarar síntomas y retrasar el diagnóstico.
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
-[[Regresar y tomar otra decisión|Caso1]]</tw-passagedata><tw-passagedata pid="9" name="PruebasDiagnosticas" tags="" position="75,550" size="100,100">:: PruebasDiagnosticas
+[[Regresar y tomar otra decisión|Caso1]]</tw-passagedata><tw-passagedata pid="9" name="PruebasDiagnosticas" tags="" position="0,475" size="100,100">:: PruebasDiagnosticas
 Se solicitan pruebas complementarias:
 - Hemograma: Leucocitosis con neutrofilia.
 - PCR elevada.
@@ -204,19 +211,19 @@ Se solicitan pruebas complementarias:
 ¿Qué decisión tomarás?
 - [[Derivar a cirugía para apendicectomía + antibióticos.|CirugiaApendicitis]]
 - [[Administrar antibióticos y esperar evolución.|ErrorAntibioticos]]
-- [[Dar de alta con reposo y observación.|ErrorObservacion]]</tw-passagedata><tw-passagedata pid="10" name="ErrorAdenitis" tags="" position="200,550" size="100,100">:: ErrorAdenitis
+- [[Dar de alta con reposo y observación.|ErrorObservacion]]</tw-passagedata><tw-passagedata pid="10" name="ErrorAdenitis" tags="" position="125,475" size="100,100">:: ErrorAdenitis
 Adenitis mesentérica es menos frecuente y la ecografía no muestra inflamación apendicular.
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
-[[Regresar y tomar otra decisión|HistoriaClinica]]</tw-passagedata><tw-passagedata pid="11" name="ErrorGastroenteritis" tags="" position="325,550" size="100,100">:: ErrorGastroenteritis
+[[Regresar y tomar otra decisión|HistoriaClinica]]</tw-passagedata><tw-passagedata pid="11" name="ErrorGastroenteritis" tags="" position="250,475" size="100,100">:: ErrorGastroenteritis
 Gastroenteritis no explicaría el dolor localizado en el cuadrante inferior derecho con rebote.
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
-[[Regresar y tomar otra decisión|HistoriaClinica]]</tw-passagedata><tw-passagedata pid="12" name="ErrorInvaginacion" tags="" position="450,550" size="100,100">:: ErrorInvaginacion
+[[Regresar y tomar otra decisión|HistoriaClinica]]</tw-passagedata><tw-passagedata pid="12" name="ErrorInvaginacion" tags="" position="375,475" size="100,100">:: ErrorInvaginacion
  Invaginación se presenta con episodios de llanto súbito y heces en &quot;jalea de grosella&quot;.
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
-[[Regresar y tomar otra decisión|HistoriaClinica]]</tw-passagedata><tw-passagedata pid="13" name="CirugiaApendicitis" tags="" position="25,725" size="100,100">:: CirugiaApendicitis
+[[Regresar y tomar otra decisión|HistoriaClinica]]</tw-passagedata><tw-passagedata pid="13" name="CirugiaApendicitis" tags="" position="0,650" size="100,100">:: CirugiaApendicitis
  Coordinación del tratamiento:
 - Médico de urgencias comunica el diagnóstico.
 - Cirujano evalúa la necesidad de cirugía urgente.
@@ -225,11 +232,11 @@ Gastroenteritis no explicaría el dolor localizado en el cuadrante inferior dere
 ✅ **El paciente es operado exitosamente.**
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="14" name="ErrorAntibioticos" tags="" position="150,700" size="100,100">:: ErrorAntibioticos
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="14" name="ErrorAntibioticos" tags="" position="100,725" size="100,100">:: ErrorAntibioticos
 Administrar antibióticos sin cirugía puede llevar a perforación apendicular.
 &lt;&lt;set $puntos -= 10&gt;&gt;
 
-[[Regresar y tomar otra decisión|PruebasDiagnosticas]]</tw-passagedata><tw-passagedata pid="15" name="ErrorObservacion" tags="" position="275,675" size="100,100">:: ErrorObservacion
+[[Regresar y tomar otra decisión|PruebasDiagnosticas]]</tw-passagedata><tw-passagedata pid="15" name="ErrorObservacion" tags="" position="200,600" size="100,100">:: ErrorObservacion
 Dar de alta sin intervención quirúrgica aumenta el riesgo de peritonitis.
 &lt;&lt;set $puntos -= 10&gt;&gt;
 
@@ -248,60 +255,7 @@ Dar de alta sin intervención quirúrgica aumenta el riesgo de peritonitis.
 **Final Crítico:** Retraso en tratamiento, el paciente tuvo complicaciones.
 &lt;&lt;/if&gt;&gt;
 
-[[Volver a jugar|START]]</tw-passagedata><tw-passagedata pid="17" name="CriteriosRoma" tags="" position="550,625" size="100,100">:: CriteriosRoma
- Se confirma diagnóstico de **Síndrome de Intestino Irritable (SII)** con los criterios de Roma IV.
-&lt;&lt;set $puntos += 10&gt;&gt;
-
-¿Qué hacer a continuación?
-- [[Explicar el diagnóstico y educar a la paciente.|EducacionPaciente]]
-- [[Desarrollar un plan de tratamiento biopsicosocial.|TratamientoSII]]</tw-passagedata><tw-passagedata pid="18" name="FactoresPsicosociales" tags="" position="750,600" size="100,100">:: FactoresPsicosociales
-**Factores Psicosociales asociados al SII:**
-- Ansiedad y depresión pueden exacerbar los síntomas.
-- Estrés académico o familiar.
-- Malas relaciones con amigos, compañeros o profesores.
-
- **Importancia del enfoque biopsicosocial:**
-- La interacción entre el sistema digestivo y el cerebro influye en la percepción del dolor.
-- El apoyo psicológico y la educación familiar son claves en el manejo del SII.
-
-&lt;&lt;set $puntos += 10&gt;&gt;
-
-¿Qué hacer a continuación?
-- [[Explicar la interacción entre mente e intestino.|EducacionPaciente]]
-- [[Incorporar manejo del estrés y terapia cognitivo-conductual.|TratamientoSII]]</tw-passagedata><tw-passagedata pid="19" name="ErrorPruebasInnecesarias" tags="" position="775,450" size="100,100">:: ErrorPruebasInnecesarias
-Se ordenan estudios de laboratorio y de imagen:
-- Hemograma, PCR, prueba de celiaquía, TAC abdominal.
-- **Todos los estudios son normales**, lo que indica que el SII es un diagnóstico clínico que **no requiere pruebas invasivas**.
-
-**Lección:** En ausencia de &quot;banderas rojas&quot;, el SII se diagnostica clínicamente y no requiere pruebas innecesarias.
-
-&lt;&lt;set $puntos -= 5&gt;&gt;
-
-[[Regresar y tomar otra decisión|CriteriosRoma]]</tw-passagedata><tw-passagedata pid="20" name="EducacionPaciente" tags="" position="550,925" size="100,100">:: EducacionPaciente
-**Educación sobre el Síndrome de Intestino Irritable (SII):**
-- El SII es un trastorno funcional del intestino, **no es una enfermedad grave**.
-- No hay inflamación ni daño estructural, pero puede causar molestias significativas.
-- Se relaciona con la interacción entre el intestino y el sistema nervioso.
-- **Los síntomas pueden empeorar con el estrés, la ansiedad o ciertos alimentos.**
-
-**Manejo y Expectativas:**
-- No hay una cura definitiva, pero **se pueden controlar los síntomas**.
-- **Evitar alimentos desencadenantes** como grasas, cafeína y comidas ultra procesadas.
-- **Dieta baja en FODMAPs** puede mejorar síntomas en algunos pacientes.
-- **Ejercicio regular y técnicas de manejo del estrés** (como la terapia cognitivo-conductual) pueden ayudar.
-- **Importancia del seguimiento:** Ajustar el tratamiento según la evolución de los síntomas.
-
-&lt;&lt;set $puntos += 10&gt;&gt;
-
-[[Regresar al manejo del SII|TratamientoSII]]</tw-passagedata><tw-passagedata pid="21" name="TratamientoSII" tags="" position="725,850" size="100,100">:: TratamientoSII
- **Enfoque Biopsicosocial para el manejo del SII:**
-Dieta baja en FODMAPs.
-Manejo del estrés con terapia cognitivo-conductual.
-Ejercicio regular y buenos hábitos de sueño.
-
-&lt;&lt;set $puntos += 10&gt;&gt;
-
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="22" name="EcoObstruccion" tags="" position="1100,425" size="100,100">:: EcoObstruccion
+[[Volver a jugar|START]]</tw-passagedata><tw-passagedata pid="17" name="EcoObstruccion" tags="" position="1025,350" size="100,100">:: EcoObstruccion
 **Hallazgos:** Se confirma invaginación intestinal.
 
 ¿Qué hacer a continuación?
@@ -310,7 +264,7 @@ Ejercicio regular y buenos hábitos de sueño.
 
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="23" name="ReduccionEnema" tags="" position="975,650" size="100,100">:: ReduccionEnema
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="18" name="ReduccionEnema" tags="" position="900,575" size="100,100">:: ReduccionEnema
 **Intento de reducción con enema:**
 - Se realiza enema de aire o solución salina bajo guía ecográfica.
 - **Éxito en la reducción:** El intestino se desinvagina sin complicaciones.
@@ -318,7 +272,7 @@ Ejercicio regular y buenos hábitos de sueño.
 
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="24" name="CirugiaObstruccion" tags="" position="1350,650" size="100,100">:: CirugiaObstruccion
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="19" name="CirugiaObstruccion" tags="" position="1275,575" size="100,100">:: CirugiaObstruccion
 **Derivación a cirugía urgente:**
 - El intento de reducción con enema **falló** o hay signos de perforación.
 - Se realiza **laparotomía exploratoria** y reducción manual del segmento invaginado.
@@ -326,32 +280,38 @@ Ejercicio regular y buenos hábitos de sueño.
 
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="25" name="DietaEliminacion" tags="" position="1700,800" size="100,100">:: DietaEliminacion
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="20" name="DietaEliminacion" tags="" position="1625,725" size="100,100">:: DietaEliminacion
 Se elimina progresivamente alimentos sospechosos, con mejoría de síntomas.
 
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="26" name="DiagnosticoSII" tags="" position="725,1025" size="100,100">:: DiagnosticoSII
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="21" name="DiagnosticoSII" tags="" position="375,1050" size="100,100">:: DiagnosticoSII
  **Correcto.**  
 El paciente presenta síntomas compatibles con el **Síndrome de Intestino Irritable (SII)**, según los criterios de Roma IV.  
 
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Continuar con el caso|CriteriosRoma]]</tw-passagedata><tw-passagedata pid="27" name="ErrorEII" tags="" position="850,1025" size="100,100">:: ErrorEII
+:: PruebasAuxiliares
+ **¿Solicitarías pruebas adicionales para confirmar el diagnóstico?**
+
+- [[Sí, solicitaría hemograma, PCR y calprotectina fecal.|ErrorPruebasInnecesarias]]
+- [[Sí, haría una serología para enfermedad celíaca.|ErrorPruebasInnecesarias]]
+- [[No, el diagnóstico es clínico basado en los Criterios de Roma IV.|DiagnosticoConfirmado]]
+</tw-passagedata><tw-passagedata pid="22" name="ErrorEII" tags="" position="775,950" size="100,100">:: ErrorEII
 **Incorrecto.**  
 La enfermedad inflamatoria intestinal suele asociarse con **pérdida de peso, sangrado digestivo o fiebre**, ninguno de los cuales está presente en este caso.  
 
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
 [[Intentar nuevamente|Caso2]]
-</tw-passagedata><tw-passagedata pid="28" name="ErrorDispepsia" tags="" position="975,1025" size="100,100">:: ErrorDispepsia
+</tw-passagedata><tw-passagedata pid="23" name="ErrorDispepsia" tags="" position="900,950" size="100,100">:: ErrorDispepsia
 **Incorrecto.**  
 La dispepsia funcional se caracteriza más por **dolor epigástrico asociado a las comidas**, sin cambios en el hábito intestinal.  
 
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
 [[Intentar nuevamente|Caso2]]
-</tw-passagedata><tw-passagedata pid="29" name="DiagnosticoInvaginacion" tags="" position="1150,1025" size="100,100">:: DiagnosticoInvaginacion
+</tw-passagedata><tw-passagedata pid="24" name="DiagnosticoInvaginacion" tags="" position="1075,950" size="100,100">:: DiagnosticoInvaginacion
 **Correcto.**  
 El paciente presenta signos sugestivos de **invaginación intestinal**, incluyendo **vómitos biliosos, irritabilidad y distensión abdominal**.  
 
@@ -360,27 +320,27 @@ El paciente presenta signos sugestivos de **invaginación intestinal**, incluyen
 ¿Qué pruebas solicitarás?
 - [[Radiografía de abdomen.|RadAbdomen]]
 - [[Ecografía abdominal.|EcoObstruccion]]
-</tw-passagedata><tw-passagedata pid="30" name="ErrorVolvulo" tags="" position="1025,800" size="100,100">:: ErrorVolvulo
+</tw-passagedata><tw-passagedata pid="25" name="ErrorVolvulo" tags="" position="950,725" size="100,100">:: ErrorVolvulo
 **Incorrecto.**  
 El vólvulo se presenta con **deterioro rápido del estado general y abdomen severamente distendido**, lo que no es la primera manifestación en este caso.  
 
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
 [[Intentar nuevamente|Caso3]]
-</tw-passagedata><tw-passagedata pid="31" name="ErrorSepsis" tags="" position="1150,800" size="100,100">:: ErrorSepsis
+</tw-passagedata><tw-passagedata pid="26" name="ErrorSepsis" tags="" position="1075,725" size="100,100">:: ErrorSepsis
 **Incorrecto.**  
 Si bien la sepsis neonatal puede presentarse con vómitos, es más frecuente encontrar **fiebre, letargo y mala perfusión**, lo cual no es predominante aquí.  
 
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
 [[Intentar nuevamente|Caso3]]
-</tw-passagedata><tw-passagedata pid="32" name="RadAbdomen" tags="" position="1275,850" size="100,100">:: RadAbdomen
+</tw-passagedata><tw-passagedata pid="27" name="RadAbdomen" tags="" position="1200,775" size="100,100">:: RadAbdomen
 **Incorrecto.**
 La radiografía de abdomen puede mostrar niveles hidroaéreos, pero **no es la prueba más sensible para invaginación intestinal**.
 
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
-[[Intentar nuevamente|DiagnosticoInvaginacion]]</tw-passagedata><tw-passagedata pid="33" name="DiagnosticoAlergia" tags="" position="1550,675" size="100,100">:: DiagnosticoAlergia
+[[Intentar nuevamente|DiagnosticoInvaginacion]]</tw-passagedata><tw-passagedata pid="28" name="DiagnosticoAlergia" tags="" position="1475,600" size="100,100">:: DiagnosticoAlergia
  **Correcto.**  
 Los síntomas de **diarrea crónica, distensión abdominal y antecedentes de alergias** sugieren **alergias alimentarias no mediadas por IgE**.  
 
@@ -392,21 +352,21 @@ Los síntomas de **diarrea crónica, distensión abdominal y antecedentes de ale
 - [[Uso de probióticos para mejorar la microbiota intestinal.|ManejoProbióticos]]
 - [[Suplementación nutricional para evitar deficiencias.|ManejoSuplementos]]
 - [[Pruebas para alergias no mediadas por IgE.|PruebasAlergias]]
-</tw-passagedata><tw-passagedata pid="34" name="ErrorSII" tags="" position="1500,525" size="100,100">:: ErrorSII
+</tw-passagedata><tw-passagedata pid="29" name="ErrorSII" tags="" position="1425,450" size="100,100">:: ErrorSII
 **Incorrecto.**  
 El **Síndrome de Intestino Irritable (SII)** no está relacionado con alergias y **no suele producir síntomas persistentes en niños pequeños**.  
 
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
 [[Intentar nuevamente|Caso4]]
-</tw-passagedata><tw-passagedata pid="35" name="ErrorCeliaca" tags="" position="1650,525" size="100,100">:: ErrorCeliaca
+</tw-passagedata><tw-passagedata pid="30" name="ErrorCeliaca" tags="" position="1575,450" size="100,100">:: ErrorCeliaca
 **Incorrecto.**  
 La **enfermedad celíaca** suele asociarse con **pérdida de peso, desnutrición y síntomas extraintestinales**, lo cual no es predominante en este caso.  
 
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
 [[Intentar nuevamente|Caso4]]
-</tw-passagedata><tw-passagedata pid="36" name="ManejoProbióticos" tags="" position="1350,1025" size="100,100">:: ManejoProbióticos
+</tw-passagedata><tw-passagedata pid="31" name="ManejoProbióticos" tags="" position="1275,950" size="100,100">:: ManejoProbióticos
 **Uso de probióticos:**
 - Se sugiere el uso de cepas específicas como **Lactobacillus rhamnosus GG** y **Bifidobacterium breve**.
 - Ayudan a mejorar la disbiosis intestinal y a modular la respuesta inmune.
@@ -414,7 +374,7 @@ La **enfermedad celíaca** suele asociarse con **pérdida de peso, desnutrición
 
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="37" name="ManejoSuplementos" tags="" position="1500,975" size="100,100">:: ManejoSuplementos
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="32" name="ManejoSuplementos" tags="" position="1425,900" size="100,100">:: ManejoSuplementos
 **Suplementación nutricional:**
 - Se recomienda suplementar **vitamina D, hierro y ácidos grasos esenciales** en pacientes con restricción dietética prolongada.
 - Se debe evitar deficiencias nutricionales por eliminación de grupos alimentarios importantes.
@@ -422,7 +382,7 @@ La **enfermedad celíaca** suele asociarse con **pérdida de peso, desnutrición
 
 &lt;&lt;set $puntos += 10&gt;&gt;
 
-[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="38" name="PruebasAlergias" tags="" position="1675,975" size="100,100">:: PruebasAlergias
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="33" name="PruebasAlergias" tags="" position="1600,900" size="100,100">:: PruebasAlergias
 **Solicitar pruebas para alergias alimentarias no mediadas por IgE:**
  **Pruebas serológicas NO son útiles**, ya que estas alergias no dependen de IgE.
 
@@ -433,6 +393,75 @@ La **enfermedad celíaca** suele asociarse con **pérdida de peso, desnutrición
 &lt;&lt;set $puntos -= 5&gt;&gt;
 
 [[Regresar a opciones de manejo|DiagnosticoAlergia]]
+</tw-passagedata><tw-passagedata pid="34" name="Introduccion" tags="" position="750,75" size="100,100">:: Introduccion
+ **Hola, &lt;&lt;print $nombre&gt;&gt;. ¡Bienvenido a esta sala de emergencia!**  
+Comienzas con **&lt;&lt;print $puntos&gt;&gt; puntos**.
+
+¡Eres el médico de urgencias en una noche agitada! Cuatro niños han llegado con dolor abdominal. Debes evaluarlos, diagnosticar y tomar decisiones para asegurar la mejor atención.
+
+ **Selecciona un paciente para comenzar:**  
+- [[Caso 1: Niño de 6 años con fiebre y dolor abdominal agudo |Caso1]]  
+- [[Caso 2: Adolescente de 15 años con dolor abdominal recurrente|Caso2]]  
+- [[Caso 3: Bebé de 3 meses con vómitos biliosos|Caso3]]  
+- [[Caso 4: Niño de 7 años con dolor abdominal crónico y diarrea intermitente|Caso4]]  
+
+</tw-passagedata><tw-passagedata pid="35" name="ErrorAlergia" tags="" position="775,700" size="100,100">Alergia alimentaria: Más frecuente en niños pequeños con síntomas cutáneos asociados.
+
+&lt;&lt;set $puntos -= 5&gt;&gt;
+
+[[Intentar nuevamente|Caso2]]</tw-passagedata><tw-passagedata pid="36" name="ErrorPruebasInnecesarias" tags="" position="350,600" size="100,100">:: ErrorPruebasInnecesarias
+Se ordenan estudios de laboratorio y de imagen:
+- Hemograma, PCR, prueba de celiaquía, TAC abdominal.
+- **Todos los estudios son normales**, lo que indica que el SII es un diagnóstico clínico que **no requiere pruebas invasivas**.
+
+**Lección:** En ausencia de &quot;banderas rojas&quot;, el SII se diagnostica clínicamente y no requiere pruebas innecesarias.
+
+&lt;&lt;set $puntos -= 5&gt;&gt;
+
+[[Regresar y tomar otra decisión|DiagnosticoSII]]</tw-passagedata><tw-passagedata pid="37" name="ErrorCeliacaCaso2" tags="" position="825,1100" size="100,100">:: ErrorCeliacaCaso2
+ **Incorrecto.**  
+La enfermedad celíaca puede causar dolor abdominal y cambios en las deposiciones, pero se caracteriza por **pérdida de peso, desnutrición y síntomas extraintestinales**.  
+
+ **Las pruebas diagnósticas incluyen:**  
+- **Anticuerpos anti-transglutaminasa IgA** y **anti-endomisio IgA**.  
+- **Biopsia duodenal** en casos con sospecha clínica alta.  
+
+&lt;&lt;set $puntos -= 5&gt;&gt;
+
+[[Intentar nuevamente|Caso2]]
+</tw-passagedata><tw-passagedata pid="38" name="DiagnosticoConfirmado" tags="" position="700,1125" size="100,100">:: TratamientoSII
+**¿Cuál sería el mejor enfoque terapéutico inicial para el SII en este paciente?**
+
+- [[Dieta baja en FODMAPs.|ManejoFODMAP]]  
+- [[Terapia cognitivo-conductual.|ManejoPsicologico]] 
+- [[Uso de antiespasmódicos y probióticos.|ManejoFarmacologico]]  
+- [[Tratamiento empírico con antibióticos de amplio espectro.|ErrorAntibioticoscaso2]]  
+</tw-passagedata><tw-passagedata pid="39" name="ManejoFODMAP" tags="" position="650,1300" size="100,100">Dieta baja en FODMAPs: Beneficio en algunos pacientes, pero difícil de mantener.
+
+&lt;&lt;set $puntos -= 5&gt;&gt;
+
+[[Intentar nuevamente|DiagnosticoConfirmado]]</tw-passagedata><tw-passagedata pid="40" name="ManejoPsicologico" tags="" position="825,1300" size="100,100">La evidencia científica respalda que el estrés y la ansiedad juegan un rol clave en la fisiopatología del SII.
+Terapia psicológica combinada con educación familiar ha demostrado mayor eficacia que solo cambios dietéticos.
+
+&lt;&lt;set $puntos += 10&gt;&gt;
+
+[[Ver resultados|Resultados]]</tw-passagedata><tw-passagedata pid="41" name="ManejoFarmacologico" tags="" position="1000,1250" size="100,100">Antiespasmódicos como la hioscina pueden ser útiles en pacientes con dolor predominante, pero no es primera línea.
+Probióticos tienen evidencia variable, pero pueden ayudar en algunos casos.
+
+&lt;&lt;set $puntos -= 5&gt;&gt;
+
+[[Intentar nuevamente|DiagnosticoConfirmado]]</tw-passagedata><tw-passagedata pid="42" name="ErrorAntibioticoscaso2" tags="" position="700,1500" size="100,100">:: ErrorAntibioticosCaso2
+**Incorrecto.**  
+El uso de **antibióticos de amplio espectro no está indicado en el tratamiento del SII**, ya que **no hay evidencia de una infección bacteriana subyacente**.  
+
+ **Tratamiento correcto:**  
+- La terapia **cognitivo-conductual y la educación familiar** son la base del manejo.  
+- La **dieta baja en FODMAPs** puede ayudar en algunos pacientes.  
+- **Antibióticos solo se usan en sobrecrecimiento bacteriano intestinal (SIBO), pero no en SII clásico.**  
+
+&lt;&lt;set $puntos -= 5&gt;&gt;
+
+[[Intentar nuevamente|DiagnosticoConfirmado]]
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
